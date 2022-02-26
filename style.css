@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu+Mono&family=Ubuntu:ital,wght@0,300;1,300&display=swap");
+:root{
+    /* --serif: "Ubuntu", sans-serif;
+    --monospace: "Ubuntu Mono", monospace; */
+    --serif: "Iowan Old Style", serif;
+    --monospace: "Roboto Mono", monospace;
+    --bgTittleImage: url(images/bgTexture.png);
+    --bgTittleColor: #ff8614;
+    --fontColor: #ebebeb;
+    --bgColor: #282A28;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bgColor);
+    color: var(--fontColor);
+    font-family: var(--serif);
+}
+
+
+header {
+    padding: 1rem;
+    background-color: var(--bgTittleColor);
+    background-image: var(--bgTittleImage), var(--bgTittleImage);
+    background-position: 0 0, 16px 16px;
+    text-align: center;
+    border-bottom: 1px solid black;
+}
+
+header ul li {
+    display: inline;
+    text-decoration: none;
+}
+
+header ul li:hover {
+    display: inline;
+    text-decoration: none;
+}
+
+main {
+    margin: auto;
+    font-size: larger;
+    background-color: var(--bgColor);
+}
+
+main>div#LastUpdate {
+    padding: 1rem;
+}
+
+main>div#TableOfContent {
+    float: right;
+    padding: 0rem 1rem;
+}
+
+main>section>h2 {
+    background-color: var(--bgTittleColor);
+    background-image: var(--bgTittleImage), var(--bgTittleImage);
+    background-position: 0 0, 16px 16px;
+    padding: 1rem 3rem;
+    font-size: x-large;
+    width: 40%;
+    margin: auto;
+}
+
+main>section>h2>a {
+    text-decoration: none;
+    color: var(--fontColor);
+}
+
+main>section>h2>a.anchor {
+    float: right;
+}
+
+main>section>p {
+    width: 30%;
+    margin: auto;
+    text-align: justify;
+    font-size: large;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+main>section>iframe {
+    border: none;
+    height: 25vh;
+    width: 100%;
+}
+
+main>section>div.img2 {
+    width: 32%;
+    margin: auto;
+}
+
+main>section>div.img2>img {
+    width: 45%;
+    padding: 2.5%;
+}
+
+main>section>div.img2>img:nth-child(1) {
+    float: left;
+}
+
+main>section>div.img2>img:nth-child(2) {
+    float: right;
+}
