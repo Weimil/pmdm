@@ -40,6 +40,7 @@
                 <h2 id="AcercaDelProjecto">
                     <a href="#AcercaDelProjecto">Acerca del projecto</a>
                     <a href="#AcercaDelProjecto" class="anchor">#</a>
+                    <a href="#TableOfContent" class="anchor">^</a>
                 </h2>
 
                 <p>
@@ -67,6 +68,7 @@
                 <h2 id="GeneracionProcedural">
                     <a href="#GeneracionProcedural">Generación Procedural</a>
                     <a href="#GeneracionProcedural" class="anchor">#</a>
+                    <a href="#TableOfContent" class="anchor">^</a>
                 </h2>
                 <p>
                     La generación procedural es la base de este proyecto y es la técnica de hacer que un ordenador cree algo para que un humano no tenga que hacerlo.
@@ -117,6 +119,7 @@
                 <h2 id="Ruido">
                     <a href="#Ruido">Ruido</a>
                     <a href="#Ruido" class="anchor">#</a>
+                    <a href="#TableOfContent" class="anchor">^</a>
                 </h2>
                 <p>
                     Antes he mencionado el termino "pseudoaleatorio", que implica que algo, en este caso un numero, sea pseudoaleatorio ?
@@ -143,7 +146,7 @@
                 </p>
 
                 <div class="img1">
-                    <img src="images/SimplexNoise.png" alt="RandomNoise">
+                    <img src="images/SimplexNoise.png" alt="SimplexNoise">
                 </div>
 
                 <p>
@@ -155,15 +158,76 @@
                 </p>
             </section>
         
-            
+            <section>
+                <h2 id="EstructuraDelJuego">
+                    <a href="#EstructuraDelJuego">Estructura del juego</a>
+                    <a href="#EstructuraDelJuego" class="anchor">#</a>
+                    <a href="#TableOfContent" class="anchor">^</a>
+                </h2>
+                
+                <p>
+                    Vamos a dejar apartado el ruido y los números pseudoaleatorios para dar un poco de contexto a como funciona el EarthMaker antes de que esos conceptos entren en juego.
+                </p>
+
+                <p>
+                    El primer concepto, aunque no entrare en mucho detalle, es la malla de renderizado o mesh, esta en la encargada de que un objeto se vea y tenga una forma.
+                </p>
+
+                <p>
+                    Tener muchas mallas en pantalla puede causar muchos problemas de rendimiento dado que Unity trata cada malla como una llamada de dibujado diferente. Así que tener cada bloque del mundo como una malla implicaría tener serios problemas de rendimiento.
+                </p>
+
+                <p>
+                    Pero tener una malla muy grande también puede dar muchos problemas. Dado que cada vez que una nueva área del mundo tuviese que ser generada la malla de todo el mundo tendría que eliminarse y recrearse otra vez.
+                </p>
+
+                <p>
+                    Así que la solución es ir agrupando los bloques en diferentes paquetes con un tamaño razonable con el que sea mas fácil trabajar. Estos trozos los llamaremos chunks.
+                </p>
+
+                <p>
+                    De esta manera nace una especie de tabla de medidas en el juego en el que un bloque es de un metro de largo, un chunk es un conjunto de 16x256x16 bloques, una región es un conjunto de 32x32 chunks y el mundo que es el conjunto de todas las regiones existentes.
+                </p>
+
+                <p>
+                    Para que este mas claro estos son los scrips, sin toda la funcionalidad, del mundo y de la región.
+                </p>
+
+                <p>
+                    Aquí podemos ver como la clase mundo guarda las regiones en un diccionario en le que la clave es un Vector2 que se usa como identificador de la región.
+                </p>
+
+                <div class="img1">
+                    <img src="images/WorldSimplified.png" alt="WorldSimplified">
+                </div>
+
+                <p>
+                    Y con la clase Región pasa algo parecido, siendo las diferencia respecto a la clase mundo que la región almacena Chunks y que el método Load ahora es un método asíncrono.
+                </p>
+
+                <div class="img1">
+                    <img src="images/RegionSimplified.png" alt="RegionSimplified">
+                </div>
+            </section>
+
+            <section>
+                <h2 id="MapaDeAltura">
+                    <a href="#MapaDeAltura">Mapa de altura</a>
+                    <a href="#MapaDeAltura" class="anchor">#</a>
+                    <a href="#TableOfContent" class="anchor">^</a>
+                </h2>
+                <p>
+
+                </p>
+            </section>
         </main>
 
         <footer>
             <div>
-                <div id="Copyright">
+                <!-- <div id="Copyright">
                     Copyright © 2022
                     <a href="#">Weimil from WTech</a>
-                </div>
+                </div> -->
                 <div id="ChangeLog">
                     25th Febrary 2022
                     Created the post.
@@ -172,3 +236,54 @@
         </footer>
     </body>
 </html>
+
+<!-- 
+    public class Libro  
+    {  
+        private Tapa _tapa;  
+        private Genero _genero;  
+        private int _paginas;  
+        
+        public Libro(Tapa tapa, Genero genero, int paginas)  
+        { 
+            _tapa = tapa;  
+            _genero = genero;  
+            _paginas = paginas;  
+        }  
+    }  
+
+public enum Tapa  
+{  
+    TapaDura,  
+    TapaBlanda
+}  
+
+public enum Genero  
+{  
+    CienciaFiccion,  
+    Fantasia,  
+    Historia,  
+    Misterio,  
+    Comedia,  
+    Amor  
+}  
+    
+    public class GeneradorLibros  
+    {  
+        public Libro[] GeneraLibros(int numeroLibros)  
+        { 
+            Libro[] listaLibros = new Libro[numeroLibros];  
+            Random random = new Random();  
+
+            for (int i = 0; i < listaLibros.Length; i++)  
+            { 
+                listaLibros[i] = new Libro(  
+                    (Tapa) random.Next(Enum.GetValues(typeof(Tapa)).Length),  
+                    (Genero) random.Next(Enum.GetValues(typeof(Genero)).Length),  
+                    random.Next(100, 600)
+                );  
+            }  
+            return listaLibros;  
+        }  
+    } 
+-->

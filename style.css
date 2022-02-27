@@ -6,7 +6,7 @@
     --bgTittleColor: #fd7f18;
     --fontColor: #ebebeb;
     --shadowFontColor: #ebebeb99;
-    --bgColor: #403D39;
+    --bgColor: #312f2c;
 }
 
 * {
@@ -17,8 +17,6 @@
 }
 
 body {
-    margin: 0;
-    padding: 0;
     background-color: var(--bgColor);
     color: var(--fontColor);
 }
@@ -96,6 +94,8 @@ main>section>h2>a {
 
 main>section>h2>a.anchor {
     float: right;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
 }
 
 main>section>p {
