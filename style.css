@@ -93,9 +93,9 @@ main>section>h2>a {
 }
 
 main>section>h2>a.anchor {
-    float: right;
     padding-right: 0.5rem;
     padding-left: 0.5rem;
+    float: right;
 }
 
 main>section>p {
