@@ -1,13 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu+Mono&family=Ubuntu:ital,wght@0,300;1,300&display=swap");
 :root{
-    /* --serif: "Ubuntu", sans-serif;
-    --monospace: "Ubuntu Mono", monospace; */
-    --serif: "Iowan Old Style", serif;
-    --monospace: "Roboto Mono", monospace;
+    --serif: "Ubuntu", serif;
+    --monospace: "Ubuntu Mono", monospace;
     --bgTittleImage: url(images/bgTexture.png);
-    --bgTittleColor: #ff8614;
+    --bgTittleColor: #fd7f18;
     --fontColor: #ebebeb;
-    --bgColor: #282A28;
+    --shadowFontColor: #ebebeb99;
+    --bgColor: #403D39;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font: var(--serif);
+    color: var(--fontColor);
 }
 
 body {
@@ -15,7 +21,6 @@ body {
     padding: 0;
     background-color: var(--bgColor);
     color: var(--fontColor);
-    font-family: var(--serif);
 }
 
 
@@ -28,14 +33,25 @@ header {
     border-bottom: 1px solid black;
 }
 
-header ul li {
+header>h1 {
+    font-size: 3.5rem;
+}
+
+header>h3 {
+    font-size: 1.5rem;
+}
+
+header>nav>ul>li {
     display: inline;
+    padding: 0.2rem 0.75rem;
+}
+
+header>nav>ul>li>a {
     text-decoration: none;
 }
 
-header ul li:hover {
-    display: inline;
-    text-decoration: none;
+header>nav>ul>li>a:hover {
+    text-decoration: underline;
 }
 
 main {
@@ -45,27 +61,38 @@ main {
 }
 
 main>div#LastUpdate {
+    float: left;
     padding: 1rem;
 }
 
 main>div#TableOfContent {
     float: right;
-    padding: 0rem 1rem;
+    padding: 1rem;
+}
+
+main>div#TableOfContent>h2 {
+    font-size: xx-large;
+    margin: 1rem; 
 }
 
 main>section>h2 {
     background-color: var(--bgTittleColor);
     background-image: var(--bgTittleImage), var(--bgTittleImage);
     background-position: 0 0, 16px 16px;
-    padding: 1rem 3rem;
-    font-size: x-large;
-    width: 40%;
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+    padding: 0.5rem 3rem;
     margin: auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    width: 40%;
 }
 
 main>section>h2>a {
+    font-size: x-large;
     text-decoration: none;
     color: var(--fontColor);
+    text-shadow: 1px 1px 1px var(--shadowFontColor);
 }
 
 main>section>h2>a.anchor {
@@ -81,10 +108,14 @@ main>section>p {
     margin-bottom: 1rem;
 }
 
-main>section>iframe {
-    border: none;
-    height: 25vh;
-    width: 100%;
+main>section>div.img1 {
+    width: 42%;
+    margin: auto;
+}
+
+main>section>div.img1>img {
+    width: 95%;
+    padding: 2.5%;
 }
 
 main>section>div.img2 {

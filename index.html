@@ -4,76 +4,158 @@
         <meta charset="UTF-8">
         <title>EarthMakerLite</title>
         <link rel="stylesheet" type="text/css" href="style.css">
-        <link rel="icon" href="WTech.svg" type="image/x-icon">
+        <link rel="icon" href="images/WTech.svg" type="image/x-icon">
     </head>
 
     <body>
         <header>
             <h1>EarthMakerLite</h1>
-            <h3>from <a href="#">WTech</a></h3>
+            <h3>from <a href="">WTech</a></h3>
             <nav>
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Links</a></li>
-                    <li><a href="#">Twitter</a></li>
-                    <li><a href="#">About</a></li>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">Blog</a></li>
+                    <li><a href="">About</a></li>
                 </ul>
             </nav>
         </header>
 
         <main>
             <div id="TableOfContent">
-                <h2>Table Of Content</h2>
+                <h2>Table de contenido</h2>
                 <ul>
                     <li><a href="#AcercaDelProjecto">Acerca del projecto</a></li>
-                    <li><a href="#GeneracionProcedural">Generacion Procedural</a></li>
+                    <li><a href="#GeneracionProcedural">Generación Procedural</a></li>
+                    <li><a href="#Ruido">Ruido</a></li>
+                    <li><a href="#MapaDeAltura">Mapa de altura</a></li>
                 </ul>
             </div>
+
             <div id="LastUpdate">
                 LastUpdate: 25th Febrary 2022
                 <a href="#ChangeLog">#</a>
             </div>
 
             <section>
-                <h2>
+                <h2 id="AcercaDelProjecto">
                     <a href="#AcercaDelProjecto">Acerca del projecto</a>
                     <a href="#AcercaDelProjecto" class="anchor">#</a>
                 </h2>
+
                 <p>
-                    Desde siempre me he considerado un desarrollador de backend. Me gusta ver interfaces bonitas claro, como a todo el mundo, pero lo que realmente me gusta es hacer que esa interfaz responda lo mas rapidamente posible. Asi que cuando me puse a pensar acerca de tema de mi juego lo unico en lo que podia pensar era, "Como puedo haber un juego sin preocuparme del aspecto grafico". De inmediato pensé en minecraft, no por el aspecto grafico, sino por lo mucho que se acerca del juego. Así que pense en recrear la redstone. Pero despues de pensasar un poco supe que era algo basicamente imposible para mi.
+                    Desde siempre me he considerado un desarrollador de backend. Me gusta ver interfaces bonitas claro, como a todo el mundo, pero lo que realmente me gusta es hacer que esa interfaz responda lo mas rápidamente posible.
+                </p>
+
+                <p>
+                    Así que cuando me puse a pensar acerca de tema de mi juego lo único en lo que podía pensar era, "Como puedo hacer un juego sin preocuparme del aspecto gráfico o la jugabilidad".
+                </p>
+
+                <p>
+                    De inmediato pensé en Minecraft, no por el aspecto gráfico, sino por lo mucho que se acerca del juego. Así que pensé en recrear la redstone. Pero despues de pensar un poco supe que era algo básicamente imposible para mi.
+                </p>
+
+                <p>
+                    Así que el siguiente sistema del que mas se del juego es la generación de terreno y del conocido como seedFinding y seedHunting.
+                </p>
+
+                <p>
+                    Dicho esto empecemos con la explicación de como EarthMaker en su versión Lite funciona.
                 </p>
             </section>
 
             <section>
-                <h2>
-                    <a href="#GeneracionProcedural">Generacion Procedural</a>
+                <h2 id="GeneracionProcedural">
+                    <a href="#GeneracionProcedural">Generación Procedural</a>
                     <a href="#GeneracionProcedural" class="anchor">#</a>
                 </h2>
                 <p>
-                    La generacion procedural es la base de este projecto y es la tecnica de hacer que un ordenador cree algo para que un humano no tenga que hacerlo. Para ello se usan diferentes algoritmos basados en transformar numeros aleatorios o pseudoaleatorios, mes sobre el tema en unos minutos, en propiedades de un objeto siguiendo una serie de reglas que han sido previamente definidas.La mejor manera de verlo es con un ejemplo:
+                    La generación procedural es la base de este proyecto y es la técnica de hacer que un ordenador cree algo para que un humano no tenga que hacerlo.
                 </p>
 
-                <iframe src="https://carbon.now.sh/embed/j8AcMch5Z9BNf1zwlmrN"></iframe>
-
                 <p>
-                    La respuesta rápida es no. Una respuesta un poco mas larga seria que mas o menos, pero que depende de muchos mas factores.
+                    Para ello se usan diferentes técnicas que se basan en transformar números generados aleatoria o pseudoaleatoriamente, en propiedades de un objeto.
                 </p>
-                <p>
-                    Ahora quiza te estes preguntando, ¿Porque no puedes usar ese metodo? Te responderé con otra pregunta, ¿Tiene sentido que haya una montaña nevada junto de un desierto?
-                </p>
-                <p>
-                    Quiza ahora te estes preguntando, "¿Vale, es logio, no tiene sentido pero porque no puedes usar el metodo de los libros?". Para crear cada libro lo que haciamos era lanzar tres dados imaginarios y apartir de ese resultado
+                
+                <p>    
+                    Pero un ordenador no sabe como hacer esas cosas aunque previamente se establecen una serie de reglas que definirán como se generaran dichos objetos.
                 </p>
 
+                <p>
+                    La mejor manera de verlo es con un ejemplo:
+                </p>
+
+                <p>
+                    Esta es una definición básica de un objeto libro con el tipo de tapa, el genero y el numero de paginas como atributos del libro. El objeto libro también cuenta con un constructor que inicializa todos los atributos del objeto.
+                </p>
+
+                <div class="img1">
+                    <img src="images/BookDefinition.png" alt="BookDefinition">
+                </div>
+
+                <p>
+                    Para definir el tipo de tapa y el genero, usamos dos enumeraciones donde almacenamos todas las posibilidades.
+                </p>
+
+                <div class="img1">
+                    <img src="images/CoverGenereEnums.png" alt="CoverGenereEnums">
+                </div>
+
+                <p>
+                    A la hora de generar un nuevo libro hacemos uso de la clase Random. Aunque estamos trabajando con Unity y este ofrece su propia implementación de la clase random, para este ejemplo se usa la del paquete System.
+                </p>
+
+                <div class="img1">
+                    <img src="images/GenerateBook.png" alt="GenerateBook">
+                </div>
+
+                <p>
+                    Tras ejecutar el método "GeneraLibros" tendiéramos como resultado una array del tamaño que hemos especificado con el parametro "nuemeroLibros" de libros generados proceduralmente. 
+                </p>
             </section>
 
             <section>
-                <div class="img2">
-                    <img src="images/Frame 3.svg" alt="Frame 3">
-                    <img src="images/Frame 3.svg" alt="Frame 3">
+                <h2 id="Ruido">
+                    <a href="#Ruido">Ruido</a>
+                    <a href="#Ruido" class="anchor">#</a>
+                </h2>
+                <p>
+                    Antes he mencionado el termino "pseudoaleatorio", que implica que algo, en este caso un numero, sea pseudoaleatorio ?
+                </p>
+
+                <p>
+                    Un número pseudoaleatorio es un número generado en un proceso que parece producir números al azar, pero no lo hace realmente. Las secuencias de números pseudoaleatorios no muestran ningún patrón o regularidad aparente desde un punto de vista estadístico, a pesar de haber sido generadas por un algoritmo completamente determinista, en el que las mismas condiciones iniciales producen siempre el mismo resultado.
+                </p>
+
+                <p>
+                    De todos modos al igual que antes la forma mas fácil de mostrar la diferencia entre una secuencia de números pseudoaleatorios y una de números aleatorios es con un ejemplo.
+                </p>
+
+                <p>
+                    Este es en ejemplo de una mapa de ruido completamente aleatorio:
+                </p>
+
+                <div class="img1">
+                    <img src="images/RandomNoise.png" alt="RandomNoise">
                 </div>
+
+                <p>
+                    Y este es en ejemplo de una mapa de ruido pseudoaleatorio generado usando SimplexNoise:
+                </p>
+
+                <div class="img1">
+                    <img src="images/SimplexNoise.png" alt="RandomNoise">
+                </div>
+
+                <p>
+                    Hay una clara diferencia entre los dos tipos de mapas de ruido siendo la mas importante la distribución mas natural de los valores.
+                </p>
+
+                <p>
+                    Mientras que en el ruido aleatorio el color negro mas oscuro puede estar junto al blanco mas claro en le caso del pseudoaleatorio esa situación es imposible.
+                </p>
             </section>
+        
+            
         </main>
 
         <footer>
