@@ -143,7 +143,7 @@
                 </div>
 
                 <p>
-                    Y este es en ejemplo de una mapa de ruido pseudoaleatorio generado usando SimplexNoise:
+                    Y este es en ejemplo de una mapa de ruido pseudoaleatorio tambien conocido como ruido coherente generado usando SimplexNoise:
                 </p>
 
                 <div class="img1">
@@ -209,6 +209,14 @@
                 <div class="img1">
                     <img src="images/RegionSimplified.png" alt="RegionSimplified">
                 </div>
+
+                <p>
+                    Y por ultimo la mas compleja de las clases, Chunk. Al igual que el los ejemplos anteriores la clase esta simplificada, pero de momento solo hace falta que conozcais la estructura general.
+                </p>
+
+                <div class="img1">
+                    <img src="images/ChunkSimplified.png" alt="ChunkSimplified">
+                </div>
             </section>
 
             <section>
@@ -218,8 +226,60 @@
                     <a href="#TableOfContent" class="anchor">^</a>
                 </h2>
                 <p>
-
+                    Ahora que ya sabeis de donde aparecen estos Chunks y cual es su estructura, toca volver a los numeros pseudoaleatorios y el ruido coherente.
                 </p>
+
+                <p>
+                    El ruido por si solo es simplemente un monton de números. Lo que tenemos que hacer es darles un significado. Lo primero que nos viene a la cabeza al pensar en generacion de terreno es la forma del terreno, el relieve. Así que empezaremos por asignar este ruido a la altura.
+                </p>
+
+                <p>
+                    Pero antes hay que aplicarle algunos cambios, dado que el ruido tiene un rango de -1 a 1 el terreno seria un plano gigante sin nada interesante.
+                </p>
+
+                <p>
+                    El primer modificador sera la amplitud esta determina la altura maxima y minima que podra tener el terreno.
+                    <br><a href="https://www.desmos.com/calculator/gbrikfkap2">Desmos</a>
+                </p>
+
+                <div class="img1">
+                    <img src="images/AmplitudDesmos.png" alt="AmplitudDesmos">
+                </div>
+
+                <p>
+                    El segundo de estos modificador sera la freqüencia esta determina la distancia entre los picos de cada montaña. 
+                    <br><a href="https://www.desmos.com/calculator/ney5avfsuy">Desmos</a>
+                </p>
+
+                <div class="img1">
+                    <img src="images/FrequenciaDesmos.png" alt="FreqüenciaDesmos">
+                </div>
+
+                <p>
+                    El ultimo y mas importante de estos modificadores son los Octaves, encargados de dar detalle al terreno. 
+                    <br><a href="https://www.desmos.com/calculator/sg5ytj2mo1">Desmos</a>
+                </p>
+
+                <div class="img1">
+                    <img src="images/OctavesDesmos.png" alt="FreqüenciaDesmos">
+                </div>
+
+                <p>
+                    En este ultimo grafico podemos ver como interactual los 3 modificadores juntos. 
+                    <br><a href="https://www.desmos.com/calculator/dgkwyi1v89">Desmos</a>
+                </p>
+
+                <div class="img1">
+                    <img src="images/AllModsDesmos.png" alt="FreqüenciaDesmos">
+                </div>
+
+                <p>
+                    Con todo esto explicado es hora de ver como se crea el mapa de altura en EarthMaker.
+                </p>
+
+                <div class="img1">
+                    <img src="images/CreateHightMap.png" alt="">
+                </div>
             </section>
         </main>
 
