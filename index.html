@@ -236,19 +236,19 @@
                 </p>
 
                 <p>
-                    Pero antes tengo que hacer una anotación. Antes he mencionado que en EarthMaker cada bloque tiene un metro de altura. El ruido no es mas que un monton de números en el rango de -1 a 1. Lo cual significa que el resultado seria un mundo practicamente plano.
+                    Pero antes tengo que hacer una anotación. Antes he mencionado que en EarthMaker cada bloque tiene un metro de altura. El ruido no es mas que un montón de números en el rango de -1 a 1. Lo cual significa que el resultado seria un mundo practicamente plano.
                 </p>
 
                 <p>
-                    Para solucionar esto tenemos que convertir estos valores a unos que puedan representar el relieve de un terreno. 
+                    Para solucionar esto tenemos que convertir estos valores a unos que puedan representar el relieve de un terreno.
                 </p>
 
                 <p>
-                    El primer modificador del que hablare será la amplitud. La amplitud es la encargada de determinar cual sera el rango de alturas alas que el ruido podrá llegar. Como simpre un ejemplo es la mejor manera de explicarlo.
+                    El primer modificador del que hablare será la amplitud. La amplitud es la encargada de determinar cual sera el rango de alturas alas que el ruido podrá llegar. Como siempre un ejemplo es la mejor manera de explicarlo.
                 </p>
 
                 <p>
-                    En este caso no estoy usando ruido pero la funcion sin(x) para simplificar las cosas un poco.  
+                    En este caso no estoy usando ruido pero la función sin(x) para simplificar las cosas un poco.
                 </p>
 
                 <p>
@@ -260,11 +260,11 @@
                 </div>
 
                 <p>
-                    El segundo de estos modificador sera la frecuencia esta determina la distancia entre los picos de cada montaña. En el caso de EarthMaker no se usa la frecuencia se usa el ancho de onda, esta esta directamente relacionada con la frecuencia: AnchoDeOnda = TamañoDeMapa / Frecuencia. 
+                    El segundo de estos modificador sera la frecuencia esta determina la distancia entre los picos de cada montaña. En el caso de EarthMaker no se usa la frecuencia se usa el ancho de onda, esta esta directamente relacionada con la frecuencia: AnchoDeOnda = TamañoDeMapa / Frecuencia.
                 </p>
 
                 <p>
-                    El porque de usar el ancho de onda y no la frecuencia es porque necesito que la frecuencia sea muy baja, de 0,1 o 0,05. en ancho de onda mepermite usar numeros mas grandes, 128 o 192 dado que la frecuencia se aplica multiplicando la coordenada y la frecuencia mientras que con el ancho de onda es una división.
+                    El porque de usar el ancho de onda y no la frecuencia es porque necesito que la frecuencia sea muy baja, de 0,1 o 0,05. Usar el ancho de onda me permite usar números mas grandes, 128 o 192 dado que la frecuencia se aplica multiplicando la coordenada y la frecuencia mientras que con el ancho de onda es una división.
                 </p>
 
                 <p>
@@ -276,7 +276,7 @@
                 </div>
 
                 <p>
-                    La el mapa de ruido nos devuelve numeros entre -1 y 1. Para conseguir montañas mas altas a la vez que valles entre dichas montañas podemos elevar dicho valor a un exponente. podemos verlo facilmente en es grafico, pero de esta manera conseguimos hacer que la amplitud no sea el unico modificador que altere la altura del terreno, dandonos mas opciones.
+                    La el mapa de ruido nos devuelve números entre -1 y 1. Para conseguir montañas mas altas a la vez que valles entre dichas montañas podemos elevar dicho valor a un exponente. podemos verlo fácilmente en es gráfico, pero de esta manera conseguimos hacer que la amplitud no sea el único modificador que altere la altura del terreno, dandonos mas opciones.
                 </p>
 
                 <p>
@@ -292,11 +292,11 @@
                 </p>
 
                 <p>
-                    Con esto conseguimos terrenos mucho mas detallados, el pricipio de este modificador es que el primero de los Octaves será el que dará la forma general al terreno y los siguientes iran dando mas detalle al terreno. 
+                    Con esto conseguimos terrenos mucho mas detallados, el principio de este modificador es que el primero de los Octaves será el que dará la forma general al terreno y los siguientes irán dando mas detalle al terreno.
                 </p>
 
                 <p>
-                    Seria como ir pintando cada vez con un pincel mas pequeño, el objetivo con un pincel la 5 veces mas pequeño que el primero no es cambiar drasticamente el cuadro, sino añadir sombras y trazo mas complejos que no podrias con un pincel mas grande.
+                    Seria como ir pintando cada vez con un pincel mas pequeño, el objetivo con un pincel la 5 veces mas pequeño que el primero no es cambiar drásticamente el cuadro, sino añadir sombras y trazo mas complejos que no podrías con un pincel mas grande.
                 </p>
 
                 <p>
@@ -308,7 +308,7 @@
                 </div>
 
                 <p>
-                    En este ultimo gráfico podemos ver como interactúan algunnos los modificadores juntos.
+                    En este ultimo gráfico podemos ver como interactúan algunos los modificadores juntos.
                     <br><a href="https://www.desmos.com/calculator/dgkwyi1v89">Desmos</a>
                 </p>
 
@@ -317,7 +317,7 @@
                 </div>
 
                 <p>
-                    Con todo esto explicado es hora de ver el método encargado de crea el mapa de altura en EarthMaker. 
+                    Con todo esto explicado es hora de ver el método encargado de crea el mapa de altura en EarthMaker.
                 </p>
 
                 <div class="img1">
@@ -325,7 +325,7 @@
                 </div>
 
                 <p>
-                    El resutado seria este, pero se ve muy aburrido no? Ahora mismo el mundo es unicamente piedra.
+                    El resultado seria este, pero se ve muy aburrido no? Ahora mismo el mundo es únicamente piedra.
                 </p>
 
                 <div class="img1">
@@ -333,7 +333,7 @@
                 </div>
 
                 <p>
-                    Que tal si añadimos un poco de color al mundo?
+                    Que tal si añadimos un poco de color al mundo? 
                 </p>
             </section>
         
@@ -345,7 +345,7 @@
                 </h2>
 
                 <p>
-                    Para poner color al mundo  necesitamos definir nuevos bloques para que no haya unicamente piedra.
+                    Para poner color al mundo necesitamos definir nuevos bloques para que no haya únicamente piedra.
                 </p>
 
                 <p>
@@ -373,7 +373,7 @@
                 </div>
                 
                 <p>
-                    Ahora es el momento de usar estos bloques.
+                    Ahora es el momento de usar estos bloques. 
                 </p>
             </section>
 
@@ -385,11 +385,11 @@
                 </h2>
 
                 <p>
-                    Para empezar una explicación de que significa Population, la traduccion seria poblar y hace referencia para resumir a poner los bloques en el mundo.
+                    Para empezar una explicación de que significa Population, la traducción seria poblar y hace referencia para resumir a poner los bloques en el mundo.
                 </p>
 
                 <p>
-                    De todo esto se encarga la classe Population. Esta clase se instancia una vez por cada nuevo chunk. Esta es la definición de la clase.
+                    De todo esto se encarga la clase Population. Esta clase se instancia una vez por cada nuevo chunk. Esta es la definición de la clase.
                 </p>
 
                 <div class="img1">
@@ -397,7 +397,7 @@
                 </div>
 
                 <p>
-                    Para empezar con la Population añadimos 3 métodos al método Populate. StoneLayer, BedrockLayer, DirtGrassLayer. Para el ejemplo del terreno anterion el método StoneLayer ya existia, así que empezaremos por este primero.
+                    Para empezar con la Population añadimos 3 métodos al método Populate. StoneLayer, BedrockLayer, DirtGrassLayer. Para el ejemplo del terreno anterior el método StoneLayer ya existía, así que empezaremos por este primero.
                 </p>
 
                 <p>
@@ -409,11 +409,11 @@
                 </div>
 
                 <p>
-                    Como todo el mundo sabe minecraft permite al jugador romper bloques, lo cual podria llevar al jugador a caer al bacio si picase suficiente hacia abajo. Para evitarlo el juego cuenta con un bloque "indestructible" llamado bedrock. Asi que he querido implementar algo parecido de ello se encarga el método BedrockLayer.
+                    Como todo el mundo sabe Minecraft permite al jugador romper bloques, lo cual podría llevar al jugador a caer al bacio si picase suficiente hacia abajo. Para evitarlo el juego cuenta con un bloque "indestructible" llamado bedrock. Así que he querido implementar algo parecido de ello se encarga el método BedrockLayer.
                 </p>
 
                 <p>
-                    La bedrock se genera de manera aleatoria y por capas. Teniendo la capa de altura 0 un 100% de bloques de bedrock y decrementando en un 20% para conseguir 5 capas con cada vez menos bedrock. 
+                    La bedrock se genera de manera aleatoria y por capas. Teniendo la capa de altura 0 un 100% de bloques de bedrock y decrementando en un 20% para conseguir 5 capas con cada vez menos bedrock.
                 </p>
 
                 <div class="img1">
@@ -429,11 +429,11 @@
                 </div>
 
                 <p>
-                    Y por ultimo el metodo que realmente hace que tenga color el mundo. DirtGrassLayer. Este usa un sistema parecido al usado en BedrockLayer. 
+                    Y por ultimo el método que realmente hace que tenga color el mundo. DirtGrassLayer. Este usa un sistema parecido al usado en BedrockLayer.
                 </p>
 
                 <p>
-                    El metodo genera entre 2 y 3 bloques de tierra por debajo del de cesped que siempre se genera.
+                    El método genera entre 2 y 3 bloques de tierra por debajo del de césped que siempre se genera.
                 </p>
 
                 <div class="img1">
@@ -457,7 +457,7 @@
                 </h2>
 
                 <p>
-                    Para terminar esta es una imagen del mismo terreno que se mostro dos secciones atras, esta vez con todos los tipos de bloques en el mundo.
+                    Para terminar esta es una imagen del mismo terreno que se mostró dos secciones atrás, esta vez con todos los tipos de bloques en el mundo.
                 </p>
 
                 <div class="img1">
@@ -465,15 +465,15 @@
                 </div>
 
                 <p>
-                    Con esto termina este post. Hay bastantes cosas que me gustaria añadir pero que por falta de timpo me ha resultado imposible.
+                    Con esto termina este post. Hay bastantes cosas que me gustaría añadir pero que por falta de tiempo me ha resultado imposible.
                 </p>
 
                 <p>
-                    La primera de ellas seria la creaccion de biomas y la interpolacion entre la altura y los bloques especificas de cada uno de dichos biomas. 
+                    La primera de ellas seria la creación de biomas y la interpolación entre la altura y los bloques especificas de cada uno de dichos biomas.
                 </p>
 
                 <p>
-                    Al igual que la vegetación, digo que el mundo tiene vida porque es de color verde pero una parte muy importante seria añadir arboles y plantas.
+                    Al igual que la vegetación, digo que el mundo tiene vida porque es de color verde pero una parte muy importante seria añadir arboles y plantas. 
                 </p>
             </section>
         </main>
