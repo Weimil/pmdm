@@ -28,7 +28,9 @@
                     <li><a href="#GeneracionProcedural">Generación Procedural</a></li>
                     <li><a href="#Ruido">Ruido</a></li>
                     <li><a href="#EstructuraDelJuego">Estructura del juego</a></li>
-                    <li><a href="#MapaDeAltura">Mapa de altura</a></li>
+                    <li><a href="#Bloques">Los bloques</a></li>
+                    <li><a href="#Population">Population</a></li>
+                    <li><a href="#ResultadoFinal">Resultado final</a></li>
                 </ul>
             </div>
 
@@ -321,14 +323,158 @@
                 <div class="img1">
                     <img src="images/CreateHightMap.png" alt="">
                 </div>
+
+                <p>
+                    El resutado seria este, pero se ve muy aburrido no? Ahora mismo el mundo es unicamente piedra.
+                </p>
+
+                <div class="img1">
+                    <img src="images/TerrainOnlyStone.png" alt="TerrainOnlyStone">
+                </div>
+
+                <p>
+                    Que tal si añadimos un poco de color al mundo?
+                </p>
             </section>
         
             <section>
-                <h2 id="MapaDeAltura">
-                    <a href="#MapaDeAltura">Mapa de altura</a>
-                    <a href="#MapaDeAltura" class="anchor">#</a>
+                <h2 id="Bloques">
+                    <a href="#Bloques">Los bloques</a>
+                    <a href="#Bloques" class="anchor">#</a>
                     <a href="#TableOfContent" class="anchor">^</a>
                 </h2>
+
+                <p>
+                    Para poner color al mundo  necesitamos definir nuevos bloques para que no haya unicamente piedra.
+                </p>
+
+                <p>
+                    Esta es la definición de un objeto bloque con el nombre del bloque y el tipo de malla como atributos del bloque. El objeto bloque también cuenta con un constructor que inicializa todos los atributos del objeto.
+                </p>
+
+                <div class="img1">
+                    <img src="images/BlockClass.png" alt="BlockClass">
+                </div>
+
+                <p>
+                    Para definir el nombre del bloque y el tipo de malla, usamos dos enumeraciones donde almacenamos todas las posibilidades.
+                </p>
+
+                <div class="img1">
+                    <img src="images/BlockEnums.png" alt="BlockEnums">
+                </div>
+
+                <p>
+                    A la hora de crear un bloque nuevo uso otra clase donde tengo unos bloques modelo. Gracias a esto, puedo hacer copias de estos bloques sin usar el constructor directamente.
+                </p>
+
+                <div class="img1">
+                    <img src="images/BlockType.png" alt="BlockType">
+                </div>
+                
+                <p>
+                    Ahora es el momento de usar estos bloques.
+                </p>
+            </section>
+
+            <section>
+                <h2 id="Population">
+                    <a href="#Population">Population</a>
+                    <a href="#Population" class="anchor">#</a>
+                    <a href="#TableOfContent" class="anchor">^</a>
+                </h2>
+
+                <p>
+                    Para empezar una explicación de que significa Population, la traduccion seria poblar y hace referencia para resumir a poner los bloques en el mundo.
+                </p>
+
+                <p>
+                    De todo esto se encarga la classe Population. Esta clase se instancia una vez por cada nuevo chunk. Esta es la definición de la clase.
+                </p>
+
+                <div class="img1">
+                    <img src="images/PopulationClass.png" alt="PopulationClass">
+                </div>
+
+                <p>
+                    Para empezar con la Population añadimos 3 métodos al método Populate. StoneLayer, BedrockLayer, DirtGrassLayer. Para el ejemplo del terreno anterion el método StoneLayer ya existia, así que empezaremos por este primero.
+                </p>
+
+                <p>
+                    Este método consiste en recorrer toda la array de bloques y parar en el momento llegas a la altura determinado por el heightMap.
+                </p>
+
+                <div class="img1">
+                    <img src="images/StoneLayerMethod.png" alt="StoneLayerMethod">
+                </div>
+
+                <p>
+                    Como todo el mundo sabe minecraft permite al jugador romper bloques, lo cual podria llevar al jugador a caer al bacio si picase suficiente hacia abajo. Para evitarlo el juego cuenta con un bloque "indestructible" llamado bedrock. Asi que he querido implementar algo parecido de ello se encarga el método BedrockLayer.
+                </p>
+
+                <p>
+                    La bedrock se genera de manera aleatoria y por capas. Teniendo la capa de altura 0 un 100% de bloques de bedrock y decrementando en un 20% para conseguir 5 capas con cada vez menos bedrock. 
+                </p>
+
+                <div class="img1">
+                    <img src="images/BedrockLayerMethod.png" alt="BedrockLayerMethod">
+                </div>
+
+                <p>
+                    Este seria el resultado.
+                </p>
+
+                <div class="img1">
+                    <img src="images/BedrockLayerResult.png" alt="BedrockLayerResult">
+                </div>
+
+                <p>
+                    Y por ultimo el metodo que realmente hace que tenga color el mundo. DirtGrassLayer. Este usa un sistema parecido al usado en BedrockLayer. 
+                </p>
+
+                <p>
+                    El metodo genera entre 2 y 3 bloques de tierra por debajo del de cesped que siempre se genera.
+                </p>
+
+                <div class="img1">
+                    <img src="images/DirtGrassLayerMethod.png" alt="DirtGrassLayerMethod">
+                </div>
+
+                <p>
+                    Este seria el resultado.
+                </p>
+
+                <div class="img1">
+                    <img src="images/DirtGrassLayerResult.png" alt="DirtGrassLayerResult">
+                </div>
+            </section>
+
+            <section>
+                <h2 id="ResultadoFinal">
+                    <a href="#ResultadoFinal">Resultado final</a>
+                    <a href="#ResultadoFinal" class="anchor">#</a>
+                    <a href="#TableOfContent" class="anchor">^</a>
+                </h2>
+
+                <p>
+                    Para terminar esta es una imagen del mismo terreno que se mostro dos secciones atras, esta vez con todos los tipos de bloques en el mundo.
+                </p>
+
+                <div class="img1">
+                    <img src="images/TerrainAll.png" alt="TerrainAll">
+                </div>
+
+                <p>
+                    Con esto termina este post. Hay bastantes cosas que me gustaria añadir pero que por falta de timpo me ha resultado imposible.
+                </p>
+
+                <p>
+                    La primera de ellas seria la creaccion de biomas y la interpolacion entre la altura y los bloques especificas de cada uno de dichos biomas. 
+                </p>
+
+                <p>
+                    Al igual que la vegetación, digo que el mundo tiene vida porque es de color verde pero una parte muy importante seria añadir arboles y plantas.
+                </p>
             </section>
         </main>
 
