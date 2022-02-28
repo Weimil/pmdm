@@ -167,7 +167,7 @@
                 </h2>
                 
                 <p>
-                    Vamos a dejar apartado el ruido y los números pseudoaleatorios para dar un poco de contexto a como funciona el EarthMaker antes de que esos conceptos entren en juego.
+                    Vamos a dejar apartado el ruido y los números pseudoaleatorios para dar un poco de contexto a como funciona EarthMaker antes de que esos conceptos entren en juego.
                 </p>
 
                 <p>
@@ -211,7 +211,7 @@
                 </div>
 
                 <p>
-                    Y por ultimo la mas compleja de las clases, Chunk. Al igual que el los ejemplos anteriores la clase esta simplificada, pero de momento solo hace falta que conozcais la estructura general.
+                    Y por ultimo la mas compleja de las clases, Chunk. Al igual que el los ejemplos anteriores la clase esta simplificada, pero de momento solo hace falta que conozcáis la estructura general. 
                 </p>
 
                 <div class="img1">
@@ -226,19 +226,30 @@
                     <a href="#TableOfContent" class="anchor">^</a>
                 </h2>
                 <p>
-                    Ahora que ya sabeis de donde aparecen estos Chunks y cual es su estructura, toca volver a los numeros pseudoaleatorios y el ruido coherente.
+                    Ahora que ya sabéis de donde aparecen estos Chunks y cual es su estructura, toca volver a los números pseudoaleatorios y el ruido coherente.
                 </p>
 
                 <p>
-                    El ruido por si solo es simplemente un monton de números. Lo que tenemos que hacer es darles un significado. Lo primero que nos viene a la cabeza al pensar en generacion de terreno es la forma del terreno, el relieve. Así que empezaremos por asignar este ruido a la altura.
+                    El ruido por si solo es simplemente un montón de números. Lo que tenemos que hacer es darles un significado. Lo primero que nos viene a la cabeza al pensar en generación de terreno es la forma del terreno, el relieve. Así que empezaremos por asignar este ruido a la altura.
                 </p>
 
                 <p>
-                    Pero antes hay que aplicarle algunos cambios, dado que el ruido tiene un rango de -1 a 1 el terreno seria un plano gigante sin nada interesante.
+                    Pero antes tengo que hacer una anotación. Antes he mencionado que en EarthMaker cada bloque tiene un metro de altura. El ruido no es mas que un monton de números en el rango de -1 a 1. Lo cual significa que el resultado seria un mundo practicamente plano.
                 </p>
 
                 <p>
-                    El primer modificador sera la amplitud esta determina la altura maxima y minima que podra tener el terreno.
+                    Para solucionar esto tenemos que convertir estos valores a unos que puedan representar el relieve de un terreno. 
+                </p>
+
+                <p>
+                    El primer modificador del que hablare será la amplitud. La amplitud es la encargada de determinar cual sera el rango de alturas alas que el ruido podrá llegar. Como simpre un ejemplo es la mejor manera de explicarlo.
+                </p>
+
+                <p>
+                    En este caso no estoy usando ruido pero la funcion sin(x) para simplificar las cosas un poco.  
+                </p>
+
+                <p>
                     <br><a href="https://www.desmos.com/calculator/gbrikfkap2">Desmos</a>
                 </p>
 
@@ -247,39 +258,77 @@
                 </div>
 
                 <p>
-                    El segundo de estos modificador sera la freqüencia esta determina la distancia entre los picos de cada montaña. 
+                    El segundo de estos modificador sera la frecuencia esta determina la distancia entre los picos de cada montaña. En el caso de EarthMaker no se usa la frecuencia se usa el ancho de onda, esta esta directamente relacionada con la frecuencia: AnchoDeOnda = TamañoDeMapa / Frecuencia. 
+                </p>
+
+                <p>
+                    El porque de usar el ancho de onda y no la frecuencia es porque necesito que la frecuencia sea muy baja, de 0,1 o 0,05. en ancho de onda mepermite usar numeros mas grandes, 128 o 192 dado que la frecuencia se aplica multiplicando la coordenada y la frecuencia mientras que con el ancho de onda es una división.
+                </p>
+
+                <p>
                     <br><a href="https://www.desmos.com/calculator/ney5avfsuy">Desmos</a>
                 </p>
 
                 <div class="img1">
-                    <img src="images/FrequenciaDesmos.png" alt="FreqüenciaDesmos">
+                    <img src="images/FrecuenciaDesmos.png" alt="FrecuenciaDesmos">
                 </div>
 
                 <p>
-                    El ultimo y mas importante de estos modificadores son los Octaves, encargados de dar detalle al terreno. 
+                    La el mapa de ruido nos devuelve numeros entre -1 y 1. Para conseguir montañas mas altas a la vez que valles entre dichas montañas podemos elevar dicho valor a un exponente. podemos verlo facilmente en es grafico, pero de esta manera conseguimos hacer que la amplitud no sea el unico modificador que altere la altura del terreno, dandonos mas opciones.
+                </p>
+
+                <p>
+                    <br><a href="https://www.desmos.com/calculator/olgshm23ir">Desmos</a>
+                </p>
+
+                <div class="img1">
+                    <img src="images/RedistributionDesmos.png" alt="RedistributionDesmos">
+                </div>
+
+                <p>
+                    Con este modificador lo que vamos a hacer es hacer mas interesante el mapa de altura añadiendo varios mapas de ruido con diferentes frecuencias.
+                </p>
+
+                <p>
+                    Con esto conseguimos terrenos mucho mas detallados, el pricipio de este modificador es que el primero de los Octaves será el que dará la forma general al terreno y los siguientes iran dando mas detalle al terreno. 
+                </p>
+
+                <p>
+                    Seria como ir pintando cada vez con un pincel mas pequeño, el objetivo con un pincel la 5 veces mas pequeño que el primero no es cambiar drasticamente el cuadro, sino añadir sombras y trazo mas complejos que no podrias con un pincel mas grande.
+                </p>
+
+                <p>
                     <br><a href="https://www.desmos.com/calculator/sg5ytj2mo1">Desmos</a>
                 </p>
 
                 <div class="img1">
-                    <img src="images/OctavesDesmos.png" alt="FreqüenciaDesmos">
+                    <img src="images/OctavesDesmos.png" alt="OctavesDesmos">
                 </div>
 
                 <p>
-                    En este ultimo grafico podemos ver como interactual los 3 modificadores juntos. 
+                    En este ultimo gráfico podemos ver como interactúan algunnos los modificadores juntos.
                     <br><a href="https://www.desmos.com/calculator/dgkwyi1v89">Desmos</a>
                 </p>
 
                 <div class="img1">
-                    <img src="images/AllModsDesmos.png" alt="FreqüenciaDesmos">
+                    <img src="images/AllModsDesmos.png" alt="AllModsDesmos">
                 </div>
 
                 <p>
-                    Con todo esto explicado es hora de ver como se crea el mapa de altura en EarthMaker.
+                    Con todo esto explicado es hora de ver el método encargado de crea el mapa de altura en EarthMaker. 
                 </p>
 
                 <div class="img1">
                     <img src="images/CreateHightMap.png" alt="">
                 </div>
+            </section>
+        
+            <section>
+                <h2 id="MapaDeAltura">
+                    <a href="#MapaDeAltura">Mapa de altura</a>
+                    <a href="#MapaDeAltura" class="anchor">#</a>
+                    <a href="#TableOfContent" class="anchor">^</a>
+                </h2>
             </section>
         </main>
 
