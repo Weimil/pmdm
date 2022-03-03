@@ -2,7 +2,7 @@
 :root{
     --serif: "Ubuntu", serif;
     --monospace: "Ubuntu Mono", monospace;
-    --bgTittleImage: url(images/bgTexture.png);
+    --bgTittleImage: url(Images/backgroundImage.png);
     --bgTittleColor: #fd7f18;
     --fontColor: #ebebeb;
     --shadowFontColor: #ebebeb99;

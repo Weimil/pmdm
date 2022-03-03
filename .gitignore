@@ -1,2 +1,2 @@
-
-tmp/*
+# Ignore all private folders
+private
