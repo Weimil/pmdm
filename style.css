@@ -112,27 +112,28 @@ main>section>div.img1 {
     width: 42%;
 }
 
-main>section>div.img1>img {
+main>section>div.img1>img:nth-child(1) {
     margin: auto;
     width: 95%;
     padding: 2.5%;
 }
 
 main>section>div.img2 {
+    float: none;
     margin: auto;
     width: 32%;
 }
 
-main>section>div.img2>img {
+main>section>div.img2>img:nth-child(1) {
+    float: left;
     margin: auto;
     width: 45%;
     padding: 2.5%;
 }
 
-main>section>div.img2>img:nth-child(1) {
-    float: left;
-}
-
 main>section>div.img2>img:nth-child(2) {
     float: right;
+    margin: auto;
+    width: 45%;
+    padding: 2.5%;
 }

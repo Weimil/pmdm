@@ -38,12 +38,6 @@
             </div>
 
             <section>
-                <p>
-                    <a href="https://github.com/Weimil/TicTacToe">El codigo en github.</a> 
-                </p>
-            </section>
-
-            <section>
                 <h2 id="AcercaDelProyecto">
                     <a href="#AcercaDelProyecto">Acerca del proyecto</a>
                     <a href="#AcercaDelProyecto" class="anchor">#</a>
@@ -51,11 +45,11 @@
                 </h2>
 
                 <p>
-                    Tic-Tac-Toe, este es uno de los juegos mas jugados de la historia. El mitico tres en raya. En este proyecto he querido hacer dos cosas, crear un tres en raya multijugador que ademas estubiese hecho en menos de 100 lineas de codigo.
+                    Tic-Tac-Toe, este es uno de los juegos mas jugados de la historia. El mítico tres en raya. En este proyecto he querido hacer dos cosas, crear un tres en raya multijugador que además estuviese hecho en menos de 100 lineas de código.
                 </p>
 
                 <p>
-                    Objetivos conseguidos. Y ahora mostrare como esta echo el juego y dado que el unico script que hay es uno con 89 lineas de codigo lo explicare todo paso por paso. Y por suerte no tendreis que estar mucho timpo leiendo.
+                    Objetivos conseguidos. Y ahora mostrare como esta echo el juego y dado que el único script que hay es uno con 98 lineas de código lo explicare todo paso por paso. Y por suerte no tendréis que estar mucho tiempo leyendo. 
                 </p>
             </section>
 
@@ -67,11 +61,111 @@
                 </h2>
 
                 <p>
-                    Tic-Tac-Toe, este es uno de los juegos mas jugados de la historia. El mitico tres en raya. En este proyecto he querido hacer dos cosas, crear un tres en raya multijugador que ademas estubiese hecho en menos de 100 lineas de codigo.
+                    El juego es muy sencillo, al final del día no es mas que un tres en raya. Cada jugador tendrá que ir ponindo sus piezas con el objetivo de ganar al oponente.
                 </p>
 
                 <p>
-                    Objetivos conseguidos. Y ahora mostrare como esta echo el juego y dado que el unico script que hay es uno con 89 lineas de codigo lo explicare todo paso por paso. Y por suerte no tendreis que estar mucho timpo leiendo.
+                    Si uno de los jugadores consigue hacer un tres en raya o el tablero se llena el juego terminará y tendréis la opción de reiniciar el juego o cerrarlo.
+                </p>
+
+                <p>
+                    El orden de los jugadores es fijo, el servidor empezará siempre y como primer jugador este controlará el personaje "X". Y el cliente tomará el control de "0".
+                </p>
+
+                <div class="img2">
+                    <img src="images/ExampleCross.png" alt="ExampleCross">
+                    <img src="images/ExampleZero.png" alt="ExampleZero">
+                </div>
+
+                <p>
+                    Con esto dicho, vamos a ver el código. 
+                </p>
+            </section>
+
+            <section>
+                <h2 id="ElScript">
+                    <a href="#ElScript">El Script</a>
+                    <a href="#ElScript" class="anchor">#</a>
+                    <a href="#TableOfContent" class="anchor">^</a>
+                </h2>
+
+                <p>
+                    Empecemos por la única clase que hay que es Game. Esta contiene toda la lógica del juego.
+                </p>
+
+                <div class="img1">
+                    <img src="images/ClassGame.png" alt="ClassGame">
+                </div>
+
+                <p>
+                    Aunque he dicho que explicaría todo paso a paso intentaré ir rápido, el proyecto no tiene tanto como para estar mucho tiempo explicando cosas.
+                </p>
+
+                <p>
+                    El primer método que vemos es ExecuteTurn. Este es el que da comienzo a cada turno empezándolo con la información necesaria para que el juego pueda continuar.
+                </p>
+
+                <div class="img1">
+                    <img src="images/MethodExecuteTurn.png" alt="MethodExecuteTurn">
+                </div>
+
+                <p>
+                    El método anterior lo que hace es enviar una RPC dependiendo de la id del jugador y de si es servidor o no. En el código de la RPC podemos ver como se gestiona dicha información.
+                </p>
+
+                <div class="img1">
+                    <img src="images/MethodTurn.png" alt="MethodTurn">
+                </div>
+
+                <p>
+                    Una cosa que me gusta hacer con las RPC es almacenar las diferentes variables al principio del método, de esa manera puedes usarlas sabiendo exactamente que son.
+                </p>
+
+                <p>
+                    Con las variables bien almacenadas actualizamos la ideal jugador a la del siguiente, ponemos la imagen correspondiente al botón y con ella el texto, el cual es invisible pero muy útil para despues comprobar de quien es cada uno de las casillas.
+                </p>
+
+                <p>
+                    Es hora de saber si alguien ha ganado llamando al método GameOver que hace una rápida comprobación de si el tablero tiene espacios libres o si hay un tres en raya.
+                </p>
+
+                <div class="img1">
+                    <img src="images/MethodGameOver.png" alt="MethodGameOver">
+                </div>
+
+                <p>
+                    En el caso de que nadie haya ganado todo terminaría en ese punto y el siguiente jugador pasaría a poder poner su pieza.
+                </p>
+
+                <p>
+                    Si el tablero esta lleno o alguien ha ganado se muestra quien ha ganado junto a un botón para reiniciar el juego. 
+                </p>
+            </section>
+
+            <section>
+                <h2 id="ResultadoFinal">
+                    <a href="#ResultadoFinal">Resultado Final</a>
+                    <a href="#ResultadoFinal" class="anchor">#</a>
+                    <a href="#TableOfContent" class="anchor">^</a>
+                </h2>
+
+                <p>
+                    Despues de estar trabajando en este proyecto esta claro que Forge Networking es una librería que no esta terminada y que esta mas que demostrado si entras al servidor de discord.
+                </p>
+
+                <p>
+                    La librería tiene múltiples fallos y características lógicas que simplemente no existen.
+                </p>
+
+                <p>
+                    Es una gran herramienta para empezar, pero mi próximo proyecto en red será con otra librería o con una red programada por mi, así si algo no funciona será culpa mía.
+                </p>
+
+                <p>
+                    Sin duda lo mas divertido del proyecto ha sido el limite de 100 lineas. 
+                </p>
+                <p>
+                    <a href="https://github.com/Weimil/TicTacToe">El codigo en github.</a> 
                 </p>
             </section>
         </main>
