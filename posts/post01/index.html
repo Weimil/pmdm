@@ -3,17 +3,17 @@
     <head>
         <meta charset="UTF-8">
         <title>EarthMakerLite</title>
-        <link rel="stylesheet" type="text/css" href="../../style.css">
-        <link rel="icon" href="../../images/WTech.svg" type="image/x-icon">
+        <link rel="stylesheet" type="text/css" href="https://weimil.github.io/style.css">
+        <link rel="icon" href="https://weimil.github.io/images/WTech.svg" type="image/x-icon">
     </head>
 
     <body>
         <header>
             <h1>EarthMakerLite</h1>
-            <h3>from <a href="../../index.html">WTech</a></h3>
+            <h3>from <a href="https://weimil.github.io/index.html">WTech</a></h3>
             <nav>
                 <ul>
-                    <li><a href="">Home</a></li>
+                    <li><a href="https://weimil.github.io/index.html">Home</a></li>
                     <li><a href="https://github.com/Weimil">GitHub</a></li>
                     <li><a href="">About</a></li>
                 </ul>
@@ -47,22 +47,14 @@
                 </h2>
 
                 <p>
-                    Desde siempre me he considerado un desarrollador de backend. Me gusta ver interfaces bonitas claro, como a todo el mundo, pero lo que realmente me gusta es hacer que esa interfaz responda lo mas rápidamente posible.
-                </p>
-
-                <p>
-                    Así que cuando me puse a pensar acerca de tema de mi juego lo único en lo que podía pensar era, "Como puedo hacer un juego sin preocuparme del aspecto gráfico o la jugabilidad".
-                </p>
-
-                <p>
-                    De inmediato pensé en Minecraft, no por el aspecto gráfico, sino por lo mucho que se acerca del juego. Así que pensé en recrear la redstone. Pero despues de pensar un poco supe que era algo básicamente imposible para mi.
-                </p>
-
-                <p>
-                    Así que el siguiente sistema del que mas se del juego es la generación de terreno y del conocido como seedFinding y seedHunting.
-                </p>
-
-                <p>
+                    Desde siempre me he considerado un desarrollador de backend. Me gusta ver interfaces bonitas claro, como a todo el mundo, pero lo que realmente me gusta es hacer que esa interfaz responda lo más rápidamente posible. 
+                    <br><br>
+                    Así que cuando me puse a pensar acerca de tema de mi juego lo único en lo que podía pensar era, ¿Como puedo hacer un juego sin preocuparme del aspecto gráfico o la jugabilidad?.
+                    <br><br>
+                    De inmediato pensé en Minecraft, no por el aspecto gráfico, sino por lo mucho que se acerca del juego. Así que pensé en recrear la redstone. Después de pensar un poco supe que era algo básicamente imposible para mi.
+                    <br><br>
+                    Así que el siguiente sistema del que mas se del juego es la generación de terreno y del conocido como "seedFinding" y "seedHunting".
+                    <br><br>
                     Dicho esto empecemos con la explicación de como EarthMaker en su versión Lite funciona.
                 </p>
             </section>
@@ -75,22 +67,14 @@
                 </h2>
                 <p>
                     La generación procedural es la base de este proyecto y es la técnica de hacer que un ordenador cree algo para que un humano no tenga que hacerlo.
-                </p>
-
-                <p>
+                    <br><br>
                     Para ello se usan diferentes técnicas que se basan en transformar números generados aleatoria o pseudoaleatoriamente, en propiedades de un objeto.
-                </p>
-                
-                <p>    
-                    Pero un ordenador no sabe como hacer esas cosas aunque previamente se establecen una serie de reglas que definirán como se generaran dichos objetos.
-                </p>
-
-                <p>
+                    <br><br>
+                    Pero un ordenador no sabe como hacer esas cosas si previamente no le estableces una serie de reglas que definirán como se generaran dichos objetos.
+                    <br><br>
                     La mejor manera de verlo es con un ejemplo:
-                </p>
-
-                <p>
-                    Esta es una definición básica de un objeto libro con el tipo de tapa, el genero y el numero de paginas como atributos del libro. El objeto libro también cuenta con un constructor que inicializa todos los atributos del objeto.
+                    <br><br>
+                    Esta es una definición básica de un objeto "libro" con el tipo de tapa, el género y el número de páginas como atributos. El objeto "libro" también cuenta con un constructor que inicializa todos los atributos del objeto.
                 </p>
 
                 <div class="img1">
@@ -98,7 +82,7 @@
                 </div>
 
                 <p>
-                    Para definir el tipo de tapa y el genero, usamos dos enumeraciones donde almacenamos todas las posibilidades.
+                    Para definir el tipo de tapa y el género, usamos dos enumeraciones donde almacenamos todas las posibilidades.
                 </p>
 
                 <div class="img1">
@@ -110,7 +94,7 @@
                 </div>
 
                 <p>
-                    A la hora de generar un nuevo libro hacemos uso de la clase Random. Aunque estamos trabajando con Unity y este ofrece su propia implementación de la clase random, para este ejemplo se usa la del paquete System.
+                    A la hora de generar un nuevo libro hacemos uso de la clase Random. Aunque estamos trabajando con Unity y este ofrece su propia implementación de la clase Random, para este ejemplo se usa la del paquete System.
                 </p>
 
                 <div class="img1">
@@ -118,7 +102,7 @@
                 </div>
 
                 <p>
-                    Tras ejecutar el método "GeneraLibros" tendiéramos como resultado una array del tamaño que hemos especificado con el parametro "nuemeroLibros" de libros generados proceduralmente. 
+                    Tras ejecutar el método "GeneraLibros" tendríamos como resultado una array del tamaño que hemos especificado con el parametro "nuemeroLibros" de libros generados proceduralmente. 
                 </p>
             </section>
 
@@ -129,19 +113,13 @@
                     <a href="#TableOfContent" class="anchor">^</a>
                 </h2>
                 <p>
-                    Antes he mencionado el termino "pseudoaleatorio", que implica que algo, en este caso un numero, sea pseudoaleatorio ?
-                </p>
-
-                <p>
+                    Antes he mencionado el término "pseudoaleatorio", que implica que algo, en este caso un número, sea pseudoaleatorio?
+                    <br><br>
                     Un número pseudoaleatorio es un número generado en un proceso que parece producir números al azar, pero no lo hace realmente. Las secuencias de números pseudoaleatorios no muestran ningún patrón o regularidad aparente desde un punto de vista estadístico, a pesar de haber sido generadas por un algoritmo completamente determinista, en el que las mismas condiciones iniciales producen siempre el mismo resultado.
-                </p>
-
-                <p>
-                    De todos modos al igual que antes la forma mas fácil de mostrar la diferencia entre una secuencia de números pseudoaleatorios y una de números aleatorios es con un ejemplo.
-                </p>
-
-                <p>
-                    Este es en ejemplo de una mapa de ruido completamente aleatorio:
+                    <br><br>
+                    De todos modos al igual que antes la forma más fácil de mostrar la diferencia entre una secuencia de números pseudoaleatorios y una de números aleatorios es con un ejemplo.
+                    <br><br>
+                    Este es un ejemplo de un mapa de ruido completamente aleatorio:
                 </p>
 
                 <div class="img1">
@@ -149,7 +127,7 @@
                 </div>
 
                 <p>
-                    Y este es en ejemplo de una mapa de ruido pseudoaleatorio tambien conocido como ruido coherente generado usando SimplexNoise:
+                    Y este es un ejemplo de un mapa de ruido pseudoaleatorio también conocido como ruido coherente generado usando un algoritmo llamado SimplexNoise:
                 </p>
 
                 <div class="img1">
@@ -157,11 +135,9 @@
                 </div>
 
                 <p>
-                    Hay una clara diferencia entre los dos tipos de mapas de ruido siendo la mas importante la distribución mas natural de los valores.
-                </p>
-
-                <p>
-                    Mientras que en el ruido aleatorio el color negro mas oscuro puede estar junto al blanco mas claro en le caso del pseudoaleatorio esa situación es imposible.
+                    Hay una clara diferencia entre los dos tipos de mapas de ruido siendo la más importante la distribución más natural de los valores.
+                    <br><br>
+                    Mientras que en el ruido aleatorio el color negro más oscuro puede estar junto al blanco más claro en el caso del pseudoaleatorio esa situación es imposible.
                 </p>
             </section>
         
@@ -174,34 +150,20 @@
                 
                 <p>
                     Vamos a dejar apartado el ruido y los números pseudoaleatorios para dar un poco de contexto a como funciona EarthMaker antes de que esos conceptos entren en juego.
-                </p>
-
-                <p>
-                    El primer concepto, aunque no entrare en mucho detalle, es la malla de renderizado o mesh, esta en la encargada de que un objeto se vea y tenga una forma.
-                </p>
-
-                <p>
+                    <br><br>
+                    El primer concepto, aunque no entraré en mucho detalle, es la malla de renderizado o mesh. Esta es la encargada de que un objeto se vea y tenga una forma.
+                    <br><br>
                     Tener muchas mallas en pantalla puede causar muchos problemas de rendimiento dado que Unity trata cada malla como una llamada de dibujado diferente. Así que tener cada bloque del mundo como una malla implicaría tener serios problemas de rendimiento.
-                </p>
-
-                <p>
-                    Pero tener una malla muy grande también puede dar muchos problemas. Dado que cada vez que una nueva área del mundo tuviese que ser generada la malla de todo el mundo tendría que eliminarse y recrearse otra vez.
-                </p>
-
-                <p>
-                    Así que la solución es ir agrupando los bloques en diferentes paquetes con un tamaño razonable con el que sea mas fácil trabajar. Estos trozos los llamaremos chunks.
-                </p>
-
-                <p>
-                    De esta manera nace una especie de tabla de medidas en el juego en el que un bloque es de un metro de largo, un chunk es un conjunto de 16x256x16 bloques, una región es un conjunto de 32x32 chunks y el mundo que es el conjunto de todas las regiones existentes.
-                </p>
-
-                <p>
-                    Para que este mas claro estos son los scrips, sin toda la funcionalidad, del mundo y de la región.
-                </p>
-
-                <p>
-                    Aquí podemos ver como la clase mundo guarda las regiones en un diccionario en le que la clave es un Vector2 que se usa como identificador de la región.
+                    <br><br>
+                    Tener una malla muy grande también puede dar muchos problemas. Dado que cada vez que una nueva área del mundo tuviese que ser generada la malla de todo el mundo tendría que eliminarse y recrearse otra vez.
+                    <br><br>
+                    Así que la solución es ir agrupando los bloques, que son de 1 metro de largo, en diferentes paquetes con un tamaño razonable con el que sea más fácil trabajar. Estos paquetes los llamaremos chunks.
+                    <br><br>
+                    Un chunk es un conjunto de 16x256x16 bloques. Una Región es un conjunto de 32x32 chunks y el Mundo es el conjunto de todas las regiones existentes.
+                    <br><br>
+                    Para que este más claro estos son los scrips, sin toda la funcionalidad, del Mundo y de la Región.
+                    <br><br>
+                    Aquí podemos ver como la clase Mundo guarda las regiones en un diccionario en el que la clave es un Vector2 que se usa como identificador de la Región.
                 </p>
 
                 <div class="img1">
@@ -209,7 +171,7 @@
                 </div>
 
                 <p>
-                    Y con la clase Región pasa algo parecido, siendo las diferencia respecto a la clase mundo que la región almacena Chunks y que el método Load ahora es un método asíncrono.
+                    Y con la clase Región pasa algo parecido, siendo las diferencia respecto a la clase Mundo que la Región almacena Chunks y que el método Load ahora es un método asíncrono.
                 </p>
 
                 <div class="img1">
@@ -217,7 +179,7 @@
                 </div>
 
                 <p>
-                    Y por ultimo la mas compleja de las clases, Chunk. Al igual que el los ejemplos anteriores la clase esta simplificada, pero de momento solo hace falta que conozcáis la estructura general. 
+                    Y por último la más compleja de las clases, Chunk. Al igual que en los ejemplos anteriores la clase esta simplificada, pero de momento solo hace falta que conozcáis la estructura general. 
                 </p>
 
                 <div class="img1">
@@ -233,25 +195,15 @@
                 </h2>
                 <p>
                     Ahora que ya sabéis de donde aparecen estos Chunks y cual es su estructura, toca volver a los números pseudoaleatorios y el ruido coherente.
-                </p>
-
-                <p>
+                    <br><br>
                     El ruido por si solo es simplemente un montón de números. Lo que tenemos que hacer es darles un significado. Lo primero que nos viene a la cabeza al pensar en generación de terreno es la forma del terreno, el relieve. Así que empezaremos por asignar este ruido a la altura.
-                </p>
-
-                <p>
+                    <br><br>
                     Pero antes tengo que hacer una anotación. Antes he mencionado que en EarthMaker cada bloque tiene un metro de altura. El ruido no es mas que un montón de números en el rango de -1 a 1. Lo cual significa que el resultado seria un mundo practicamente plano.
-                </p>
-
-                <p>
+                    <br><br>
                     Para solucionar esto tenemos que convertir estos valores a unos que puedan representar el relieve de un terreno.
-                </p>
-
-                <p>
+                    <br><br>
                     El primer modificador del que hablare será la amplitud. La amplitud es la encargada de determinar cual sera el rango de alturas alas que el ruido podrá llegar. Como siempre un ejemplo es la mejor manera de explicarlo.
-                </p>
-
-                <p>
+                    <br><br>
                     En este caso no estoy usando ruido pero la función sin(x) para simplificar las cosas un poco.
                 </p>
 
@@ -265,9 +217,7 @@
 
                 <p>
                     El segundo de estos modificador sera la frecuencia esta determina la distancia entre los picos de cada montaña. En el caso de EarthMaker no se usa la frecuencia se usa el ancho de onda, esta esta directamente relacionada con la frecuencia: AnchoDeOnda = TamañoDeMapa / Frecuencia.
-                </p>
-
-                <p>
+                    <br><br>
                     El porque de usar el ancho de onda y no la frecuencia es porque necesito que la frecuencia sea muy baja, de 0,1 o 0,05. Usar el ancho de onda me permite usar números mas grandes, 128 o 192 dado que la frecuencia se aplica multiplicando la coordenada y la frecuencia mientras que con el ancho de onda es una división.
                 </p>
 
@@ -293,13 +243,9 @@
 
                 <p>
                     Con este modificador lo que vamos a hacer es hacer mas interesante el mapa de altura añadiendo varios mapas de ruido con diferentes frecuencias.
-                </p>
-
-                <p>
+                    <br><br>
                     Con esto conseguimos terrenos mucho mas detallados, el principio de este modificador es que el primero de los Octaves será el que dará la forma general al terreno y los siguientes irán dando mas detalle al terreno.
-                </p>
-
-                <p>
+                    <br><br>
                     Seria como ir pintando cada vez con un pincel mas pequeño, el objetivo con un pincel la 5 veces mas pequeño que el primero no es cambiar drásticamente el cuadro, sino añadir sombras y trazo mas complejos que no podrías con un pincel mas grande.
                 </p>
 
@@ -350,9 +296,7 @@
 
                 <p>
                     Para poner color al mundo necesitamos definir nuevos bloques para que no haya únicamente piedra.
-                </p>
-
-                <p>
+                    <br><br>
                     Esta es la definición de un objeto bloque con el nombre del bloque y el tipo de malla como atributos del bloque. El objeto bloque también cuenta con un constructor que inicializa todos los atributos del objeto.
                 </p>
 
@@ -390,9 +334,7 @@
 
                 <p>
                     Para empezar una explicación de que significa Population, la traducción seria poblar y hace referencia para resumir a poner los bloques en el mundo.
-                </p>
-
-                <p>
+                    <br><br>
                     De todo esto se encarga la clase Population. Esta clase se instancia una vez por cada nuevo chunk. Esta es la definición de la clase.
                 </p>
 
@@ -402,9 +344,7 @@
 
                 <p>
                     Para empezar con la Population añadimos 3 métodos al método Populate. StoneLayer, BedrockLayer, DirtGrassLayer. Para el ejemplo del terreno anterior el método StoneLayer ya existía, así que empezaremos por este primero.
-                </p>
-
-                <p>
+                    <br><br>
                     Este método consiste en recorrer toda la array de bloques y parar en el momento llegas a la altura determinado por el heightMap.
                 </p>
 
@@ -414,9 +354,7 @@
 
                 <p>
                     Como todo el mundo sabe Minecraft permite al jugador romper bloques, lo cual podría llevar al jugador a caer al bacio si picase suficiente hacia abajo. Para evitarlo el juego cuenta con un bloque "indestructible" llamado bedrock. Así que he querido implementar algo parecido de ello se encarga el método BedrockLayer.
-                </p>
-
-                <p>
+                    <br><br>
                     La bedrock se genera de manera aleatoria y por capas. Teniendo la capa de altura 0 un 100% de bloques de bedrock y decrementando en un 20% para conseguir 5 capas con cada vez menos bedrock.
                 </p>
 
@@ -434,9 +372,7 @@
 
                 <p>
                     Y por ultimo el método que realmente hace que tenga color el mundo. DirtGrassLayer. Este usa un sistema parecido al usado en BedrockLayer.
-                </p>
-
-                <p>
+                    <br><br>
                     El método genera entre 2 y 3 bloques de tierra por debajo del de césped que siempre se genera.
                 </p>
 
@@ -470,17 +406,11 @@
 
                 <p>
                     Con esto termina este post. Hay bastantes cosas que me gustaría añadir pero que por falta de tiempo me ha resultado imposible.
-                </p>
-
-                <p>
+                    <br><br>
                     La primera de ellas seria la creación de biomas y la interpolación entre la altura y los bloques especificas de cada uno de dichos biomas.
-                </p>
-
-                <p>
-                    Al igual que la vegetación, digo que el mundo tiene vida porque es de color verde pero una parte muy importante seria añadir arboles y plantas. 
-                </p>
-
-                <p>
+                    <br><br>
+                    Al igual que la vegetación, digo que el mundo tiene vida porque es de color verde pero una parte muy importante seria añadir arboles y plantas.
+                    <br><br>
                     <a href="https://github.com/Weimil/EarthMakerLite/releases/tag/Release">El codigo en github.</a>
                 </p>
             </section>
